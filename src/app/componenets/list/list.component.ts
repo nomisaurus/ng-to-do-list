@@ -15,13 +15,16 @@ export class ListComponent implements OnInit {
   constructor(private dataService: ToDoService) { }
 
   ngOnInit() {
-    console.log(this.dataService.getToDos());
     this.todos = this.dataService.getToDos();
   }
 
-  deleteToDo(todo) {
-    console.log('begin delete...' + todo);
-    this.dataService.deleteToDo(todo);
+  deleteToDo(index) {
+    this.dataService.deleteToDo(index);
+  }
+
+  updateToDo(index) {
+    this.dataService.updateToDo(index);
+
   }
 
 }

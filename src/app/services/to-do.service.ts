@@ -3,21 +3,32 @@ import { ToDo } from '../models/to-do';
 
 @Injectable()
 export class ToDoService {
-  todos: ToDo[] = [
-    { name: 'to do 1', complete: false },
-    { name: 'to do 2', complete: true },
-    { name: 'to do 3', complete: false },
-    { name: 'to do 4', complete: false }
-  ];
+  todos: ToDo[] = [];
 
   constructor() { }
 
-  getToDos()  {
+  getToDos() {
+    if (localStorage.getItem('todos') != null) {
+      this.todos = JSON.parse(localStorage.getItem('todos'));
+    } else {
+      localStorage.setItem('todos', JSON.stringify(this.todos));
+    }
     return this.todos;
+  }
+
+  addToDo(todo) {
+    this.todos.push({ name: todo, complete: false });
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
   deleteToDo(index) {
     this.todos.splice(index, 1);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  updateToDo(index) {
+    this.todos[index].complete = !this.todos[index].complete;
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
 }
