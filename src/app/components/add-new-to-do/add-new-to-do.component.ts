@@ -7,14 +7,16 @@ import { ToDoService } from '../../services/to-do.service';
   styleUrls: ['./add-new-to-do.component.css']
 })
 export class AddNewToDoComponent implements OnInit {
+  newToDo: string;
 
   constructor(private dataService: ToDoService) { }
 
   ngOnInit() {
   }
 
-  addToDo(todo) {
-    this.dataService.addToDo(todo);
+  addToDo() {
+    this.dataService.addToDo(this.newToDo);
+    this.newToDo = '';
   }
 
 }
