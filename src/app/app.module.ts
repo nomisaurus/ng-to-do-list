@@ -2,18 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
-import { ListComponent } from './componenets/list/list.component';
+import { ListComponent } from './components/list/list.component';
 import { ToDoService } from './services/to-do.service';
-import { AddNewToDoComponent } from './componenets/add-new-to-do/add-new-to-do.component';
-
+import { AddNewToDoComponent } from './components/add-new-to-do/add-new-to-do.component';
+import { GreeterComponent } from './components/greeter/greeter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    AddNewToDoComponent
+    AddNewToDoComponent,
+    GreeterComponent
   ],
   imports: [
     BrowserModule,
