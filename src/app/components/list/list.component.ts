@@ -10,7 +10,6 @@ import { ToDoService } from '../../services/to-do.service';
 export class ListComponent implements OnInit {
   title: string;
   todos: ToDo[];
-  hobbies: string[];
 
   constructor(private dataService: ToDoService) { }
 
@@ -24,7 +23,6 @@ export class ListComponent implements OnInit {
 
   updateToDo(index) {
     this.dataService.updateToDo(index);
-
   }
 
 }
