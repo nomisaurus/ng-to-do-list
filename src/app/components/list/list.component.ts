@@ -25,4 +25,7 @@ export class ListComponent implements OnInit {
     this.dataService.updateToDo(index);
   }
 
+  clearList() {
+    this.dataService.clearList();
+  }
 }

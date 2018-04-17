@@ -1,5 +1,8 @@
-<h2>Add New To Do</h2>
+
 <form (submit)="addToDo()">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" [(ngModel)]="newToDo">
+  <!-- <label for="name">Name:</label> -->
+  <!-- <input type="text" name="name" id="name" [(ngModel)]="newToDo"> -->
+  <mat-form-field>
+    <input matInput placeholder="New to do" name="newToDo" [(ngModel)]="newToDo">
+  </mat-form-field>
 </form>

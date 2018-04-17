@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-    font-size: 18px;
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
 }

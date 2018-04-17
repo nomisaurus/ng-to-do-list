@@ -31,4 +31,9 @@ export class ToDoService {
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
+  clearList() {
+    this.todos.splice(0, this.todos.length);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
 }

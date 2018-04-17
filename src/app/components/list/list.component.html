@@ -1,11 +1,20 @@
-<h2>To Do List</h2>
+<!-- <h2>To Do List</h2>
 <ul>
-  <li *ngFor="let todo of todos; let i = index">
-    <input type="checkbox" name="complete" id="complete" 
+  <li *ngFor="let todo of todos; let i = index"> -->
+    <!-- <input type="checkbox" name="complete" id="complete" 
     (change)="updateToDo(i)"
-     [(checked)]="todo.complete">
-    <span [ngClass]="{'complete': todo.complete}">{{todo.name}}</span>
-    <button (click)="deleteToDo(i)">X</button>
+     [(checked)]="todo.complete"> -->
+    <!-- <span [ngClass]="{'complete': todo.complete}">{{todo.name}}</span> -->
+    <!-- <button (click)="deleteToDo(i)">X</button> -->
+    <!-- <mat-checkbox [checked]="todo.complete" (change)="updateToDo(i)" [ngClass]="{'complete': todo.complete}">{{todo.name}}</mat-checkbox>
+    <button mat-mini-fab color="warn" (click)="deleteToDo(i)">X</button>
   </li>
-</ul> 
-<app-add-new-to-do></app-add-new-to-do>
+</ul> -->
+<button mat-raised-button color="warn" (click)="clearList()">Clear List</button>
+<mat-selection-list>
+  <mat-list-option *ngFor="let todo of todos; let i = index" [selected]="todo.complete" (selectionChange)="updateToDo(i)">
+
+    <p [ngClass]="{'complete': todo.complete}">{{todo.name}}</p>
+
+  </mat-list-option>
+</mat-selection-list>
