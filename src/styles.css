@@ -2,6 +2,10 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+body {
+    padding-top: 70px;
+}
+
 .container {
     max-width: 500px;
     margin: 50px auto;
